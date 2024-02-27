@@ -1,0 +1,12 @@
+version: "develop"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8090:8090"
+    container_name: prod
+    environment:
+      - ACTIVE_PROFILE=production

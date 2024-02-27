@@ -11,13 +11,13 @@ import netology.springboot.profile.SystemProfile;
 @Configuration
 public class ProfileConfiguration {
     @Bean
-    @ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "true")
+    @ConditionalOnProperty(prefix = "netology", name = "profile", havingValue = "development")
     public SystemProfile devProfile() {
         return new DevProfile();
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "false")
+    @ConditionalOnProperty(prefix = "netology", name = "profile", havingValue = "production")
     public SystemProfile prodProfile() {
         return new ProductionProfile();
     }
